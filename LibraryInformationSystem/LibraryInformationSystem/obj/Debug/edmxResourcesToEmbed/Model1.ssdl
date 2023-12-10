@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище LibraryInformationSystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AddressStorekeepers">
+    <Key>
+      <PropertyRef Name="AdressStoreroomID" />
+    </Key>
+    <Property Name="AdressStoreroomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdStCity" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="AdStStreet" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="AdStHouse" Type="nvarchar" MaxLength="4" />
+    <Property Name="AdStCorps" Type="nvarchar" MaxLength="4" />
+    <Property Name="AdStEntrance" Type="int" />
+    <Property Name="AdStSpecialMarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="AuthorID" />
+    </Key>
+    <Property Name="AuthorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuSurname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AuName" Type="nvarchar" MaxLength="15" />
+    <Property Name="AuPatronymic" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreID" />
+    </Key>
+    <Property Name="GenreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Librarian">
+    <Key>
+      <PropertyRef Name="LibLogin" />
+    </Key>
+    <Property Name="LibLogin" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LibSurname" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LibName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LibPatronymic" Type="nvarchar" MaxLength="25" />
+    <Property Name="LibPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LibAdmin" Type="bit" />
+  </EntityType>
+  <EntityType Name="Publication">
+    <Key>
+      <PropertyRef Name="PublicationID" />
+    </Key>
+    <Property Name="PublicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PublicationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AuthorID" Type="int" />
+    <Property Name="TypePublicationID" Type="int" />
+    <Property Name="PublisherID" Type="int" />
+    <Property Name="GenreID" Type="int" />
+    <Property Name="Circulation" Type="int" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="12" />
+    <Property Name="AdressStorekeepID" Type="int" />
+    <Property Name="DatePrinting" Type="date" />
+    <Property Name="DateAdmission" Type="date" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Name="PublisherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PubName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TypePublication">
+    <Key>
+      <PropertyRef Name="TypePublicationID" />
+    </Key>
+    <Property Name="TypePublicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TPubName" Type="nvarchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Publication_AddressStorekeepers">
+    <End Role="AddressStorekeepers" Type="Self.AddressStorekeepers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddressStorekeepers">
+        <PropertyRef Name="AdressStoreroomID" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="AdressStorekeepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publication_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="AuthorID" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publication_Genre">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="GenreID" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publication_Publisher">
+    <End Role="Publisher" Type="Self.Publisher" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="PublisherID" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="PublisherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publication_TypePublication">
+    <End Role="TypePublication" Type="Self.TypePublication" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePublication">
+        <PropertyRef Name="TypePublicationID" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="TypePublicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publisher_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Publisher" Type="Self.Publisher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Publisher">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище LibraryInformationSystemModelContainer">
+    <EntitySet Name="AddressStorekeepers" EntityType="Self.AddressStorekeepers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Librarian" EntityType="Self.Librarian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypePublication" EntityType="Self.TypePublication" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Publication_AddressStorekeepers" Association="Self.FK_Publication_AddressStorekeepers">
+      <End Role="AddressStorekeepers" EntitySet="AddressStorekeepers" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publication_Author" Association="Self.FK_Publication_Author">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publication_Genre" Association="Self.FK_Publication_Genre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publication_Publisher" Association="Self.FK_Publication_Publisher">
+      <End Role="Publisher" EntitySet="Publisher" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publication_TypePublication" Association="Self.FK_Publication_TypePublication">
+      <End Role="TypePublication" EntitySet="TypePublication" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publisher_City" Association="Self.FK_Publisher_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Publisher" EntitySet="Publisher" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

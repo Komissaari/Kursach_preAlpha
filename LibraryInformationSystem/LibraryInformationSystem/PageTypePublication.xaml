@@ -1,0 +1,28 @@
+﻿<Page x:Class="LibraryInformationSystem.PageTypePublication"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryInformationSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageTypePublication"  IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid Background="AliceBlue">
+        <DataGrid x:Name="DGridTypePublication" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,70,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код типа" Binding="{Binding TypePublicationID}" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название типа" Binding="{Binding TPubName}" Width="100"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Редактирование" Width="120">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактирование" Width="100" Click="Button_Click_Edit"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавление" HorizontalAlignment="Left" Height="25" Margin="10,20,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Add"/>
+        <Button Content="Удаление" HorizontalAlignment="Left" Height="25" Margin="690,20,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Del"/>
+    </Grid>
+</Page>

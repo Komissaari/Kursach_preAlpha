@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище LibraryInformationSystemModelContainer" CdmEntityContainer="LibraryInformationSystemEntities">
+    <EntitySetMapping Name="AddressStorekeepers">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.AddressStorekeepers">
+        <MappingFragment StoreEntitySet="AddressStorekeepers">
+          <ScalarProperty Name="AdressStoreroomID" ColumnName="AdressStoreroomID" />
+          <ScalarProperty Name="AdStCity" ColumnName="AdStCity" />
+          <ScalarProperty Name="AdStStreet" ColumnName="AdStStreet" />
+          <ScalarProperty Name="AdStHouse" ColumnName="AdStHouse" />
+          <ScalarProperty Name="AdStCorps" ColumnName="AdStCorps" />
+          <ScalarProperty Name="AdStEntrance" ColumnName="AdStEntrance" />
+          <ScalarProperty Name="AdStSpecialMarks" ColumnName="AdStSpecialMarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Author">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="AuSurname" ColumnName="AuSurname" />
+          <ScalarProperty Name="AuName" ColumnName="AuName" />
+          <ScalarProperty Name="AuPatronymic" ColumnName="AuPatronymic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genre">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="GenerName" ColumnName="GenerName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Librarian">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.Librarian">
+        <MappingFragment StoreEntitySet="Librarian">
+          <ScalarProperty Name="LibLogin" ColumnName="LibLogin" />
+          <ScalarProperty Name="LibSurname" ColumnName="LibSurname" />
+          <ScalarProperty Name="LibName" ColumnName="LibName" />
+          <ScalarProperty Name="LibPatronymic" ColumnName="LibPatronymic" />
+          <ScalarProperty Name="LibPassword" ColumnName="LibPassword" />
+          <ScalarProperty Name="LibAdmin" ColumnName="LibAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publication">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.Publication">
+        <MappingFragment StoreEntitySet="Publication">
+          <ScalarProperty Name="PublicationID" ColumnName="PublicationID" />
+          <ScalarProperty Name="PublicationName" ColumnName="PublicationName" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="TypePublicationID" ColumnName="TypePublicationID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="Circulation" ColumnName="Circulation" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="AdressStorekeepID" ColumnName="AdressStorekeepID" />
+          <ScalarProperty Name="DatePrinting" ColumnName="DatePrinting" />
+          <ScalarProperty Name="DateAdmission" ColumnName="DateAdmission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publisher">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.Publisher">
+        <MappingFragment StoreEntitySet="Publisher">
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="PubName" ColumnName="PubName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypePublication">
+      <EntityTypeMapping TypeName="LibraryInformationSystemModel.TypePublication">
+        <MappingFragment StoreEntitySet="TypePublication">
+          <ScalarProperty Name="TypePublicationID" ColumnName="TypePublicationID" />
+          <ScalarProperty Name="TPubName" ColumnName="TPubName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

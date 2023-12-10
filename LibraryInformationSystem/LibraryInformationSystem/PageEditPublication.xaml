@@ -1,0 +1,55 @@
+﻿<Page x:Class="LibraryInformationSystem.PageEditPublication"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryInformationSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageEditPublication">
+
+    <Grid Background="AntiqueWhite" Margin="0,0,0,-56">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock Text="Номер издания" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Название издания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Text="Автор" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
+        <TextBlock Text="Тип издания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Text="Издательство" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
+        <TextBlock Text="Год печати" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5"></TextBlock>
+        <TextBlock Text="Год поступления" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"></TextBlock>
+        <TextBlock Text="Тираж" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7"></TextBlock>
+        <TextBlock Text="ISBN" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8"></TextBlock>
+        <TextBlock Text="Адрес хранения" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="9"></TextBlock>
+        <TextBlock Text="Жанр литературы" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="10"></TextBlock>
+        <TextBox Text="{Binding PublicationID}" x:Name="TbPublicationID" Grid.Column="1" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding PublicationName}" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
+        <ComboBox x:Name="ComboAuthor" DisplayMemberPath="AuSurname" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboTypePublication" DisplayMemberPath="TPubName" Grid.Column="1" Grid.Row="3" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboPublisher" DisplayMemberPath="AuSurname" Grid.Column="1" Grid.Row="4" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboGenre" DisplayMemberPath="GenerName" Grid.Column="1" Grid.Row="10" Width="400" Height="20"></ComboBox>
+        <TextBox Text="{Binding DatePrinting}" Grid.Column="1" Grid.Row="5" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding DateAdmission}" Grid.Column="1" Grid.Row="6" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding Circulation}" Grid.Column="1" Grid.Row="7" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding ISBN}" Grid.Column="1" Grid.Row="8" Width="400" Height="20"></TextBox>
+        <ComboBox x:Name="ComboAddressStorekeepers" DisplayMemberPath="AdStStreet" Grid.Column="1" Grid.Row="9" Width="400" Height="20"></ComboBox>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="11" Width="200" Height="40" Click="Button_Click_Save"></Button>
+    </Grid>
+</Page>

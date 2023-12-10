@@ -1,0 +1,43 @@
+﻿<Page x:Class="LibraryInformationSystem.PageEditAddressStorekeepers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryInformationSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageEditAddressStorekeepers">
+
+    <Grid Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock Text="Номер запасника" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Город" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Text="Улица" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
+        <TextBlock Text="Дом" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Text="Корпус" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
+        <TextBlock Text="Подъезд" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5"></TextBlock>
+        <TextBlock Text="Специальные отметки" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"></TextBlock>
+        <TextBox Text="{Binding AdressStoreroomID}" x:Name="TbAddressStorekeepersID" Grid.Column="1" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding AdStCity}" MaxLength="25" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding AdStStreet}" MaxLength="20" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding AdStHouse}" MaxLength="4" Grid.Column="1" Grid.Row="3" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding AdStCorps}" MaxLength="4" Grid.Column="1" Grid.Row="4" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding AdStEntrance}" Grid.Column="1" Grid.Row="5" Width="400" Height="20"></TextBox>
+        <TextBox Text="{Binding AdStSpecialMarks}" MaxLength="50" Grid.Column="1" Grid.Row="6" Width="400" Height="20"></TextBox>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="7" Width="200" Height="40" Click="Button_Click_Save"></Button>
+    </Grid>
+</Page>
