@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageEditCity">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#7B68EE">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
@@ -19,10 +19,10 @@
             <RowDefinition Height="100"/>
 
         </Grid.RowDefinitions>
-        <TextBlock Text="Номер города" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Text="Название города" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Номер города" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Название города" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
         <TextBox Text="{Binding CityID}" x:Name="TbCityID" Grid.Column="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding CityName}" MaxLength="25" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
-        <Button Content="Сохранить" Grid.Column="1" Grid.Row="4" Width="200" Height="40" Click="Button_Click_Save"></Button>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="2" Width="200" Height="40" Click="Button_Click_Save" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
     </Grid>
 </Page>

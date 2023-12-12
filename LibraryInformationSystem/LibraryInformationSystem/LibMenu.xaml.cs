@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LibraryInformationSystem
 {
@@ -23,8 +13,29 @@ namespace LibraryInformationSystem
         {
             InitializeComponent();
             Manager.MainFrame = MainFrame;
+            
         }
-
+        /*void UpdateDispaly()
+        {
+            LibraryInformationSystemEntities model = new LibraryInformationSystemEntities();
+            List<Publication> allPublication = model.Publication.ToList();
+            foreach (var book in allPublication)
+            {
+                if (Poisk.Text != "")
+                {
+                    if (book.PublicationName.ToLower().IndexOf(Poisk.Text.ToLower()) == -1)
+                    {
+                        if (book.Author.AuSurname.ToLower().IndexOf(Poisk.Text.ToLower()) == -1)
+                        {
+                            if (book.Author.AuName.ToLower().IndexOf(Poisk.Text.ToLower()) == -1)
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
+        }*/
         private void Button_Click_Publication(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new PagePublication());
@@ -33,6 +44,31 @@ namespace LibraryInformationSystem
         private void Button_Click_Authors(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new PageAuthor());
+        }
+
+        private void Button_Click_Publisher(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new PagePublisher());
+        }
+
+        private void Button_Click_Genre(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new PageGenre());
+        }
+
+        private void Button_Click_TypePublication(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new PageTypePublication());
+        }
+
+        private void Button_Click_City(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new PageCity());
+        }
+
+        private void Button_Click_AdressStorekeepers(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new PageAddressStorekeepers());
         }
     }
 }

@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageRegestration">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#7B68EE">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
@@ -22,17 +22,17 @@
             <RowDefinition Height="100"/>
 
         </Grid.RowDefinitions>
-        <TextBlock Text="Логин" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Text="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
-        <TextBlock Text="Имя" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
-        <TextBlock Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
-        <TextBlock Text="Пароль" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Логин" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Имя" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Пароль" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
         <TextBox Text="{Binding LibLogin}"  Grid.Column="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding LibSurname}" MaxLength="30" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding LibName}" MaxLength="12" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding LibPatronymic}" MaxLength="15" Grid.Column="1" Grid.Row="3" Width="400" Height="20"></TextBox>
         <PasswordBox x:Name="TB_Pass"  MaxLength="15" Grid.Column="1" Grid.Row="4" Width="400" Height="20"></PasswordBox>
-        <Button Content="Сохранить" Grid.Column="1" Grid.Row="5" Width="200" Height="40" Click="Button_Click_Save"></Button>
-        <Button Content="Назад" Height="30" Width="100" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Click="Button_Click"/>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="5" Width="200" Height="40" Click="Button_Click_Save" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+        <Button Content="Назад" Height="40" Width="130" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Page>

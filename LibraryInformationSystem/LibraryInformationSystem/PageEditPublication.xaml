@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageEditPublication">
 
-    <Grid Background="AntiqueWhite" Margin="0,0,0,-56">
+    <Grid Background="#7B68EE" Margin="0,0,0,-56">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
@@ -28,28 +28,28 @@
             <RowDefinition Height="100"/>
 
         </Grid.RowDefinitions>
-        <TextBlock Text="Номер издания" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Text="Название издания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
-        <TextBlock Text="Автор" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
-        <TextBlock Text="Тип издания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
-        <TextBlock Text="Издательство" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
-        <TextBlock Text="Год печати" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5"></TextBlock>
-        <TextBlock Text="Год поступления" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"></TextBlock>
-        <TextBlock Text="Тираж" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7"></TextBlock>
-        <TextBlock Text="ISBN" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8"></TextBlock>
-        <TextBlock Text="Адрес хранения" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="9"></TextBlock>
-        <TextBlock Text="Жанр литературы" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="10"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Номер издания" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Название издания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Автор" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Тип издания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Издательство" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Год печати" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Год поступления" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Тираж" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="ISBN" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Адрес хранения" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="9"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Жанр литературы" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="10"></TextBlock>
         <TextBox Text="{Binding PublicationID}" x:Name="TbPublicationID" Grid.Column="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding PublicationName}" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
-        <ComboBox x:Name="ComboAuthor" DisplayMemberPath="AuSurname" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></ComboBox>
-        <ComboBox x:Name="ComboTypePublication" DisplayMemberPath="TPubName" Grid.Column="1" Grid.Row="3" Width="400" Height="20"></ComboBox>
-        <ComboBox x:Name="ComboPublisher" DisplayMemberPath="AuSurname" Grid.Column="1" Grid.Row="4" Width="400" Height="20"></ComboBox>
-        <ComboBox x:Name="ComboGenre" DisplayMemberPath="GenerName" Grid.Column="1" Grid.Row="10" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboAuthor" DisplayMemberPath="AuSurname" SelectedValuePath="AuthorID" SelectedValue="{Binding AuthorID}" ItemsSource="{Binding Author}" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboTypePublication" DisplayMemberPath="TPubName" SelectedValuePath="TypePublicationID" SelectedValue="{Binding TypePublicationID}" ItemsSource="{Binding TypePublication}" Grid.Column="1" Grid.Row="3" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboPublisher" DisplayMemberPath="PubName" SelectedValuePath="PublisherID" SelectedValue="{Binding PublisherID}" ItemsSource="{Binding Publisher}" Grid.Column="1" Grid.Row="4" Width="400" Height="20"></ComboBox>
+        <ComboBox x:Name="ComboGenre" DisplayMemberPath="GenerName" SelectedValuePath="GenreID" SelectedValue="{Binding GenreID}" ItemsSource="{Binding Genre}" Grid.Column="1" Grid.Row="10" Width="400" Height="20"></ComboBox>
         <TextBox Text="{Binding DatePrinting}" Grid.Column="1" Grid.Row="5" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding DateAdmission}" Grid.Column="1" Grid.Row="6" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding Circulation}" Grid.Column="1" Grid.Row="7" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding ISBN}" Grid.Column="1" Grid.Row="8" Width="400" Height="20"></TextBox>
-        <ComboBox x:Name="ComboAddressStorekeepers" DisplayMemberPath="AdStStreet" Grid.Column="1" Grid.Row="9" Width="400" Height="20"></ComboBox>
-        <Button Content="Сохранить" Grid.Column="1" Grid.Row="11" Width="200" Height="40" Click="Button_Click_Save"></Button>
+        <ComboBox x:Name="ComboAddressStorekeepers" DisplayMemberPath="AdStStreet" SelectedValuePath="AdressStoreroomID" SelectedValue="{Binding AdressStorekeepID}" ItemsSource="{Binding AddressStorekeepers}" Grid.Column="1" Grid.Row="9" Width="400" Height="20"></ComboBox>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="11" Width="200" Height="40" Click="Button_Click_Save" HorizontalAlignment="Center" Margin="0,10,0,0"></Button>
     </Grid>
 </Page>

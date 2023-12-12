@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryInformationSystem"
         mc:Ignorable="d"
-        Title="AdminMenu" Height="450" Width="1300">
-    <Grid Margin="0,0,-402,0">
-        <Frame x:Name="MainFrame" Margin="0,75,0,0"/>
-        
+        Title="AdminMenu" Height="450" Width="1000" Background="#1A162A" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,0">
+        <Frame NavigationUIVisibility="Hidden" x:Name="AdminFrame" HorizontalAlignment="Left" Width="1000" Margin="0,90,0,0"/>
+        <Button Content="Пользователи" Margin="430,20,0,0" Height="45" Width="140" Click="Button_Click_Librarian" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

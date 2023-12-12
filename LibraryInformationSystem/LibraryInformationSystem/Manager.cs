@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace LibraryInformationSystem
 {
@@ -11,6 +6,7 @@ namespace LibraryInformationSystem
     {
         private static LibraryInformationSystemEntities _context;
         public static Frame MainFrame { get; set; }
+        public static Frame AdminFrame { get; set; }
         public static Frame RegisterFrame { get; set; }
         public static string Login { get; set; }
         public static MainWindow mainWindow { get; set; }
@@ -21,6 +17,6 @@ namespace LibraryInformationSystem
             return _context;
         }
 
-        
+
     }
 }

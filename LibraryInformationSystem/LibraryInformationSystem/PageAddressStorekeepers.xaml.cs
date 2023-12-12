@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LibraryInformationSystem
 {
@@ -35,7 +25,7 @@ namespace LibraryInformationSystem
         //кнопка удаления имеет в себе проверку на ошибочность, что позволяет уберечь от случайного удаления
         private void Button_Click_Del(object sender, RoutedEventArgs e)
         {
-            var delAddressStorekeepers = DGridAddressStorekeepers.SelectedItems.Cast<AddressStorekeepers>().ToList();   
+            var delAddressStorekeepers = DGridAddressStorekeepers.SelectedItems.Cast<AddressStorekeepers>().ToList();
             if (MessageBox.Show($"Вы точно хотите удалить {delAddressStorekeepers.Count()} элементов?", "Внимание!", MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {

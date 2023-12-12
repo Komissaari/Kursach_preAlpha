@@ -8,11 +8,11 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="Width" Value="155"/>
             <Setter Property="FontFamily" Value="Yu Gothic UI Semibold"/>
             <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Background" Value="#FF4DBF86"/>
+            <Setter Property="Background" Value="#FF6347"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -45,7 +45,7 @@
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="MinHeight" Value="25"/>
+            <Setter Property="MinHeight" Value="30"/>
             <Setter Property="MinWidth" Value="100"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -71,6 +71,15 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style x:Key="Message" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
         </Style>
     </Application.Resources>
 </Application>

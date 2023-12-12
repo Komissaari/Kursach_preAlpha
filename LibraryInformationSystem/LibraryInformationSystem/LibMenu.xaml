@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryInformationSystem"
         mc:Ignorable="d"
-        Title="LibMenu" Height="450" Width="1200">
+        Title="LibMenu" Height="650" Width="1250" Background="#1A162A" ResizeMode="NoResize">
     <Grid>
-        <Frame x:Name="MainFrame" Margin="0,75,0,0"/>
-        <Button Content="Публикации" HorizontalAlignment="Left" Margin="25,15,0,0" VerticalAlignment="Top" Height="30" Width="130" Click="Button_Click_Publication"/>
-        <Button Content="Авторы" HorizontalAlignment="Left" Margin="180,15,0,0" VerticalAlignment="Top" Height="30" Width="130" Click="Button_Click_Authors"/>
-
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Margin="0,75,0,0"/>
+        <Button Content="Публикации" HorizontalAlignment="Left" Margin="25,15,0,0" VerticalAlignment="Top" Height="45" Width="140" Click="Button_Click_Publication"/>
+        <Button Content="Авторы" Margin="190,15,0,0" Height="45" Width="140" Click="Button_Click_Authors"/>
+        <Button Content="Издатели" Margin="355,15,0,0" Height="45" Width="140" Click="Button_Click_Publisher"/>
+        <Button Content="Жанры" Margin="1050,15,0,0" Height="45" Width="140" Click="Button_Click_Genre"/>
+        <Button Content="Типы публикаций" Margin="706,15,0,0" Height="45" Width="140" Click="Button_Click_TypePublication"/>
+        <Button Content="Города" Margin="527,15,0,0" Height="45" Width="140" Click="Button_Click_City"/>
+        <Button Content="Запасники" Margin="876,15,0,0" Height="45" Width="140" Click="Button_Click_AdressStorekeepers"/>
     </Grid>
 </Window>

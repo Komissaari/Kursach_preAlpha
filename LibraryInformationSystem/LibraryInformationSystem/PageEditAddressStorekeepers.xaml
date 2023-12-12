@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageEditAddressStorekeepers">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#7B68EE">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
@@ -24,13 +24,13 @@
             <RowDefinition Height="100"/>
 
         </Grid.RowDefinitions>
-        <TextBlock Text="Номер запасника" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Text="Город" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
-        <TextBlock Text="Улица" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
-        <TextBlock Text="Дом" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
-        <TextBlock Text="Корпус" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
-        <TextBlock Text="Подъезд" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5"></TextBlock>
-        <TextBlock Text="Специальные отметки" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Номер запасника" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Город" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Улица" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Дом" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Корпус" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Подъезд" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Специальные отметки" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6"></TextBlock>
         <TextBox Text="{Binding AdressStoreroomID}" x:Name="TbAddressStorekeepersID" Grid.Column="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AdStCity}" MaxLength="25" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AdStStreet}" MaxLength="20" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></TextBox>
@@ -38,6 +38,6 @@
         <TextBox Text="{Binding AdStCorps}" MaxLength="4" Grid.Column="1" Grid.Row="4" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AdStEntrance}" Grid.Column="1" Grid.Row="5" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AdStSpecialMarks}" MaxLength="50" Grid.Column="1" Grid.Row="6" Width="400" Height="20"></TextBox>
-        <Button Content="Сохранить" Grid.Column="1" Grid.Row="7" Width="200" Height="40" Click="Button_Click_Save"></Button>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="7" Width="200" Height="40" Click="Button_Click_Save" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
     </Grid>
 </Page>

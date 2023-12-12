@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace LibraryInformationSystem
 {
@@ -22,11 +10,13 @@ namespace LibraryInformationSystem
         public AdminMenu()
         {
             InitializeComponent();
+            Manager.AdminFrame = AdminFrame;
         }
 
-        private void Button_Click_Publication(object sender, RoutedEventArgs e)
+        private void Button_Click_Librarian(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new PagePublication());
+            Manager.AdminFrame.Navigate(new PageLibrarian());
         }
+
     }
 }

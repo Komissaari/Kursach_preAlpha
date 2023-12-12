@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageAddressStorekeepers"  IsVisibleChanged="Page_IsVisibleChanged">
 
-    <Grid Background="AliceBlue">
+    <Grid Background="#1A162A">
         <DataGrid x:Name="DGridAddressStorekeepers" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,70,0,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№ запасника" Binding="{Binding AdressStoreroomID}" Width="90"></DataGridTextColumn>
@@ -18,16 +18,16 @@
                 <DataGridTextColumn Header="Корпус" Binding="{Binding AdStCorps}" Width="60"></DataGridTextColumn>
                 <DataGridTextColumn Header="Подъезд" Binding="{Binding AdStEntrance}" Width="60"></DataGridTextColumn>
                 <DataGridTextColumn Header="Специальные отметки" Binding="{Binding AdStSpecialMarks}" Width="140"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Редактирование" Width="120">
+                <DataGridTemplateColumn Header="Редактирование" Width="130">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Редактирование" Width="100" Click="Button_Click_Edit"/>
+                            <Button Content="Редактирование" Width="125" Click="Button_Click_Edit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Добавление" HorizontalAlignment="Left" Height="25" Margin="10,20,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Add"/>
-        <Button Content="Удаление" HorizontalAlignment="Left" Height="25" Margin="690,20,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Del"/>
+        <Button Content="Удаление" Height="25" Margin="150,20,0,0" Width="100" Click="Button_Click_Del"/>
     </Grid>
 </Page>

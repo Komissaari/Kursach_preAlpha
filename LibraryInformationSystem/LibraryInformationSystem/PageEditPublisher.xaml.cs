@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LibraryInformationSystem
 {
@@ -34,13 +25,14 @@ namespace LibraryInformationSystem
             }
             DataContext = _currentPublisher;
             ComboCity.ItemsSource = Manager.GetContext().City.ToList();
+            ComboCity.SelectedItem = Manager.GetContext().City.Find(_currentPublisher.CityID);
         }
         //кнопка сохранения с проверками на заполненность полей
         private void Button_Click_Save(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
             if (string.IsNullOrWhiteSpace(_currentPublisher.PubName))
-                errors.AppendLine("Отсутствует название издптеля!");
+                errors.AppendLine("Отсутствует название издателя!");
             //если есть ошибки то отменяем сохранение
             if (errors.Length > 0)
             {
@@ -51,9 +43,20 @@ namespace LibraryInformationSystem
             //булевской переменной
             try
             {
-                if (!_edit)
+                /*if (!_edit)
                 {
                     Manager.GetContext().Publisher.Add(_currentPublisher);
+                }*/
+                if (!_edit)
+                {
+                    var Current = ComboCity.SelectedItem as City;
+                    _currentPublisher.CityID = Current.CityID;
+                    Manager.GetContext().Publisher.Add(_currentPublisher);
+                }
+                else
+                {
+                    var Current = ComboCity.SelectedItem as City;
+                    _currentPublisher.CityID = Current.CityID;
                 }
                 Manager.GetContext().SaveChanges();
                 MessageBox.Show("Сохранено!");

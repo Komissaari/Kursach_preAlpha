@@ -8,23 +8,23 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageAuthor"  IsVisibleChanged="Page_IsVisibleChanged">
 
-    <Grid Background="AliceBlue">
+    <Grid Background="#1A162A">
         <DataGrid x:Name="DGridAuthor" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,70,0,0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="№ автора" Binding="{Binding AuthorID}" Width="70"></DataGridTextColumn>
+                <DataGridTextColumn  Header="№ автора" Binding="{Binding AuthorID}" Width="70"></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding AuSurname}" Width="100"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding AuName}" Width="100"></DataGridTextColumn>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding AuPatronymic}" Width="100"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Редактирование" Width="120">
+                <DataGridTemplateColumn Header="Редактирование" Width="130">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Редактирование" Width="100" Click="Button_Click_Edit"/>
+                            <Button Content="Редактирование" Width="125" Click="Button_Click_Edit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Добавление" HorizontalAlignment="Left" Height="25" Margin="10,20,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Add"/>
-        <Button Content="Удаление" HorizontalAlignment="Left" Height="25" Margin="690,20,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_Del"/>
+        <Button Content="Удаление" Height="25" Margin="150,20,0,0" Width="100" Click="Button_Click_Del"/>
     </Grid>
 </Page>

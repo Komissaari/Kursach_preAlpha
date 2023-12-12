@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageEditAuthor">
 
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#7B68EE">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
@@ -21,14 +21,14 @@
             <RowDefinition Height="100"/>
 
         </Grid.RowDefinitions>
-        <TextBlock Text="Номер автора" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Text="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
-        <TextBlock Text="Имя" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
-        <TextBlock Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Номер автора" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Имя" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
+        <TextBlock Style="{StaticResource Message}" Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"></TextBlock>
         <TextBox Text="{Binding AuthorID}" x:Name="TbAuthorID" Grid.Column="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AuSurname}" MaxLength="20" Grid.Column="1" Grid.Row="1" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AuName}" MaxLength="15" Grid.Column="1" Grid.Row="2" Width="400" Height="20"></TextBox>
         <TextBox Text="{Binding AuPatronymic}" MaxLength="20" Grid.Column="1" Grid.Row="3" Width="400" Height="20"></TextBox>
-        <Button Content="Сохранить" Grid.Column="1" Grid.Row="4" Width="200" Height="40" Click="Button_Click_Save"></Button>
+        <Button Content="Сохранить" Grid.Column="1" Grid.Row="4" Width="200" Height="40" Click="Button_Click_Save" HorizontalAlignment="Center" Margin="0,24,0,0"></Button>
     </Grid>
 </Page>
